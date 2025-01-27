@@ -55,8 +55,7 @@ button {
   margin: 10% 0%;
 }
 
-
-.shelf {
+#shelf {
   grid-area: bookshelf;
   display: grid;
   grid-template-columns: repeat(3, minmax(100px, 0.9fr));
@@ -65,7 +64,7 @@ button {
   background-color: var(--melon);
 }
 
-.shelf > div {
+#shelf > div {
   padding: 10px;
   border-radius: 5px;
   border-left: 15px solid var(--cinereous);
