@@ -73,6 +73,11 @@ button {
   box-shadow: 2px 2px 4px var(--charcoal);
 }
 
+.switch {
+  justify-self: end;
+  align-self: end;
+}
+
 footer {
   grid-area: footer;
   justify-content: start;
