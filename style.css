@@ -1,41 +1,46 @@
 :root {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --bordergradient: #040926,#251351,#7D2E68,#A85751,#C97B84;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-
-main {
+body {
     height: 100vh;
     width: 100vw;
-    background-color: bisque;
 }
 
-.container {
-    /* height: 60vw;
-    width: 80vw; */
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 50px;
-    padding: 5%; */
+main {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: 15% 1fr 10%;
+    grid-template-areas: 
+    "header header"
+    "nav bookshelf"
+    "nav footer";
 }
 
-.container > div {
-    height: 100px;
-    width: 100px;
-    border: 45px solid;
-    outline: 5px solid white;
-    outline-offset: -35px;
-    background-color: white;
-    text-align: center;
-    /* padding: 50%; */
-    border-image: repeating-linear-gradient(0deg, var(--bordergradient));
-    border-image-slice: 1;
-    transition: border 1s;
+header {
+    display: grid;
+    grid-area: header;
+    border: 2px solid green;
 }
 
-.container > div:hover {
-    border: 55px solid;
-    border-image: repeating-linear-gradient(0deg, var(--bordergradient));
-    border-image-slice: 1;
+nav {
+    display: grid;
+    grid-area: nav;
+    border: 2px solid blue;
+}
+
+.bookshelf {
+    display: flex;
+    grid-area: bookshelf;
+    border: 2px solid red;
+}
+
+.shelf {
+    display: block;
+}
+
+footer {
+    grid-area: footer;
 }
