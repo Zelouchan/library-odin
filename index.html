@@ -1,21 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <header></header>
-        <nav></nav>
-        <div class="bookshelf">
-            <div class="shelf"></div>
+      <header>
+        <h1>Welcome to the Library</h1>
+      </header>
+      <nav>
+        <h2>Add New Book</h2>
+        <form action="post">
+          <p>
+            <label for="name">Title:</label>
+            <input type="text" id="name" name="book_title" />
+          </p>
+          <p>
+            <label for="name">Author:</label>
+            <input type="text" id="author" name="book_author" />
+          </p>
+          <p>
+            <label for="name">Pages:</label>
+            <input type="number" id="pages" name="book_pages" />
+          </p>
+
+          <fieldset>
+            <legend>Read?:</legend>
+
+            <div>
+              <input type="radio" id="yes" name="read" value="yes" />
+              <label for="huey">Yes</label>
+            </div>
+
+            <div>
+              <input type="radio" id="no" name="read" value="no" checked />
+              <label for="dewey">No</label>
+            </div>
+          </fieldset>
+
+          <button type="submit">Add Book</button>
+        </form>
+      </nav>
+      <div class="bookshelf">
+        <div class="shelf">
+            <div>book 1</div>
+            <div>book 1</div>
+            <div>book 1</div>
+            <div>book 1</div>
+            <div>book 1</div>
+            <div>book 1</div>
+            <div>book 1</div>
+            <div>book 1</div>
+            <div>book 1</div>
         </div>
-        <footer></footer>
+      </div>
+      <footer>The Library Project - Tamara - The Odin Project</footer>
     </main>
-    
-</body>
+  </body>
 </html>
