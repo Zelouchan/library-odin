@@ -16,7 +16,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
   const bookRead = document.getElementById("book_read").value;
 
   const book = new Info(bookTitle, bookAuthor, bookPages, bookRead);
-  
+
   books.push(book);
 
   displayBooks();
@@ -25,6 +25,12 @@ document.getElementById("submit").addEventListener("click", function (event) {
 });
 
 function displayBooks() {
+  const shelf = document.getElementById("shelf");
+
+  shelf.innerHTML= "";
+
+  books.forEach(book => {
+
   const newDiv = document.createElement("div");
   newDiv.innerHTML = `
   <strong>Title:</strong> ${book.title}<br>
@@ -32,5 +38,6 @@ function displayBooks() {
   <strong>Pages:</strong> ${book.pages}<br>
   <strong>Read?</strong> ${book.read}`;
 
-  document.getElementById("shelf").appendChild(newDiv);
+  shelf.appendChild(newDiv); });
 }
+
