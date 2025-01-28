@@ -15,6 +15,12 @@ document.getElementById("submit").addEventListener("click", function (event) {
   const bookPages = document.getElementById("pages").value;
   const bookRead = document.getElementById("book_read").value;
 
+  //checks if all fields are filled
+  if (!bookTitle || !bookAuthor || !bookPages) {
+    alert("Give all information.");
+    return;
+  }
+
   const book = new Info(bookTitle, bookAuthor, bookPages, bookRead);
 
   // updates the array
@@ -35,9 +41,8 @@ function displayBooks() {
   shelf.innerHTML = "";
 
   //loop that generates the updates book information to the screen
-  books.forEach((book) => {
+  books.forEach((book, index) => {
     const newDiv = document.createElement("div");
-    newDiv.id = "book" + Math.random();
     newDiv.innerHTML = `
     <div>
   <strong>Title:</strong> ${book.title}<br>
@@ -45,31 +50,26 @@ function displayBooks() {
   <strong>Pages:</strong> ${book.pages}<br>
   </div>`;
 
-  const index = books.findIndex(obj => obj.title === book.title);
-  //create a button to delete array book entry
+    //create a button to delete array book entry
     const newBtn = document.createElement("button");
     newBtn.textContent = "Delete";
-    newBtn.addEventListener("click", function () {
-
+    newBtn.addEventListener("click", function() {
       books.splice(index, 1);
       displayBooks();
     });
 
-  //create a button to switch read/unread
+    //create a button to switch read/unread
     const slider = document.createElement("button");
     slider.textContent = books[index].read ? "Book Read" : "Book unread";
-    slider.addEventListener("click", function () {
+    slider.addEventListener("click", function() {
       books[index].read = !books[index].read;
       slider.textContent = books[index].read ? "Book Read" : "Book unread";
       displayBooks();
-    }); 
-    
+    });
 
-  //push the new items
+    //push the new items
     shelf.appendChild(newDiv);
     newDiv.appendChild(slider);
     newDiv.appendChild(newBtn);
   });
 }
-
-

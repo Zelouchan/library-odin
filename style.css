@@ -1,10 +1,14 @@
 :root {
-  font-family: "Courier New", Courier, monospace;
+  font-family: Arial, Helvetica, sans-serif;
   --platinum: #d8dbe2ff;
   --powder-blue: #a9bcd0ff;
   --cinereous: #a37871ff;
   --charcoal: #373f51ff;
   --melon: #daa49aff;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -27,10 +31,15 @@ main {
 
 header {
   grid-area: header;
-  justify-content: start;
-  padding: 0% 5%;
   font-size: calc(1em+0.3vw);
+}
+
+header,
+footer {
+  padding: 0% 5%;
   background-color: var(--cinereous);
+  text-align: start;
+  padding: 15px 50px;
 }
 
 nav {
@@ -38,7 +47,6 @@ nav {
   padding: 10px;
   background-color: var(--melon);
   font-weight: bold;
-
 }
 
 form input,
@@ -79,7 +87,6 @@ button {
   background-color: var(--cinereous);
   border: none;
   width: minmax(100px, 50%);
-  background-color: #a37871ff;
   border: none;
   height: 34px;
   border-radius: 34px;
@@ -89,16 +96,6 @@ button {
   margin: 2% 0%;
 }
 
-#shelf slider {
-  grid-area: button;
-}
-
 footer {
   grid-area: footer;
-  justify-content: start;
-  padding: 2% 10%;
-  background-color: var(--cinereous);
 }
-
-
-
