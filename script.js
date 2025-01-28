@@ -37,6 +37,7 @@ function displayBooks() {
   //loop that generates the updates book information to the screen
   books.forEach((book) => {
     const newDiv = document.createElement("div");
+    newDiv.id = book.title;
     newDiv.innerHTML = `
   <strong>Title:</strong> ${book.title}<br>
   <strong>Author:</strong> ${book.author}<br>
@@ -44,16 +45,31 @@ function displayBooks() {
   <strong>Read?</strong> ${book.read} <br>
   <label class="switch">
   <input type="checkbox">
-  <span class="slider round"></span>
+  <span class="slider round"></label>
   <button id="delete">delete</button> 
-</label>
 `;
-
     shelf.appendChild(newDiv);
   });
 }
 
 function toggleRead() {
-  // const bookRead = document.getElementById("book_read")
+//search arrays for the one with the specific book title
+// adjust object read
   displayBooks();
 }
+
+document.querySelectorAll("#delete").forEach((button) => {
+button.addEventListener("click", function() {
+  
+  shelf.innerHTML = "YES";
+  // find index of array
+  // slice that index
+// use id = book.title
+// delete array with that book title
+ displayBooks();
+})
+}
+);
+
+
+
