@@ -37,7 +37,7 @@ function displayBooks() {
   //loop that generates the updates book information to the screen
   books.forEach((book) => {
     const newDiv = document.createElement("div");
-    newDiv.id = book.title;
+    newDiv.id = "book" + Math.random();
     newDiv.innerHTML = `
     <div>
   <strong>Title:</strong> ${book.title}<br>
@@ -49,6 +49,11 @@ function displayBooks() {
   //create a button to delete array book entry
     const newBtn = document.createElement("button");
     newBtn.textContent = "Delete";
+    newBtn.addEventListener("click", function () {
+      const index = books.findIndex(obj => obj.title === book.title);
+      books.splice(index, 1);
+      displayBooks();
+    });
 
   //create a button to switch read/unread
     const slider = document.createElement("button");
@@ -61,16 +66,13 @@ function displayBooks() {
   });
 }
 
-newBtn.addEventListener("click", function () {
-// 
-});
 
 
-slider.addEventListener("click", function () {
 
+// slider.addEventListener("click", function () {
 
-    displayBooks();
-  });    
+//     displayBooks();
+//   });    
 
 
 
