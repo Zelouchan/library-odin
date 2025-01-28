@@ -27,7 +27,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
   document.getElementById("myForm").reset();
 });
 
-//loop that makes sure the books are displaye
+//loop that makes sure the books are displayed
 function displayBooks() {
   const shelf = document.getElementById("shelf");
 
@@ -39,37 +39,38 @@ function displayBooks() {
     const newDiv = document.createElement("div");
     newDiv.id = book.title;
     newDiv.innerHTML = `
+    <div>
   <strong>Title:</strong> ${book.title}<br>
   <strong>Author:</strong> ${book.author}<br>
   <strong>Pages:</strong> ${book.pages}<br>
   <strong>Read?</strong> ${book.read} <br>
-  <label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></label>
-  <button id="delete">delete</button> 
-`;
+  </div>`;
+
+  //create a button to delete array book entry
+    const newBtn = document.createElement("button");
+    newBtn.textContent = "Delete";
+
+  //create a button to switch read/unread
+    const slider = document.createElement("button");
+    slider.textContent = "(un)read";
+
+  //push the new items
     shelf.appendChild(newDiv);
+    newDiv.appendChild(slider);
+    newDiv.appendChild(newBtn);
   });
 }
 
-function toggleRead() {
-//search arrays for the one with the specific book title
-// adjust object read
-  displayBooks();
-}
+newBtn.addEventListener("click", function () {
+// 
+});
 
-document.querySelectorAll("#delete").forEach((button) => {
-button.addEventListener("click", function() {
-  
-  shelf.innerHTML = "YES";
-  // find index of array
-  // slice that index
-// use id = book.title
-// delete array with that book title
- displayBooks();
-})
-}
-);
+
+slider.addEventListener("click", function () {
+
+
+    displayBooks();
+  });    
 
 
 
