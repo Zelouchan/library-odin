@@ -43,21 +43,27 @@ function displayBooks() {
   <strong>Title:</strong> ${book.title}<br>
   <strong>Author:</strong> ${book.author}<br>
   <strong>Pages:</strong> ${book.pages}<br>
-  <strong>Read?</strong> ${book.read} <br>
   </div>`;
 
+  const index = books.findIndex(obj => obj.title === book.title);
   //create a button to delete array book entry
     const newBtn = document.createElement("button");
     newBtn.textContent = "Delete";
     newBtn.addEventListener("click", function () {
-      const index = books.findIndex(obj => obj.title === book.title);
+
       books.splice(index, 1);
       displayBooks();
     });
 
   //create a button to switch read/unread
     const slider = document.createElement("button");
-    slider.textContent = "(un)read";
+    slider.textContent = books[index].read ? "Book Read" : "Book unread";
+    slider.addEventListener("click", function () {
+      books[index].read = !books[index].read;
+      slider.textContent = books[index].read ? "Book Read" : "Book unread";
+      displayBooks();
+    }); 
+    
 
   //push the new items
     shelf.appendChild(newDiv);
@@ -65,14 +71,5 @@ function displayBooks() {
     newDiv.appendChild(newBtn);
   });
 }
-
-
-
-
-// slider.addEventListener("click", function () {
-
-//     displayBooks();
-//   });    
-
 
 

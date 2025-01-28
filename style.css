@@ -71,32 +71,22 @@ button {
   background-color: white;
   margin: 4%;
   box-shadow: 2px 2px 4px var(--charcoal);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr 1fr;
-  grid-template-areas: 
-  "div div"
-  "slider button"; 
-}
-
-#shelf>div>div {
-  grid-area: div;
-}
-
-#shelf newBtn {
-  grid-area: button;
+  display: flex;
+  flex-direction: column;
 }
 
 #shelf button {
   background-color: var(--cinereous);
   border: none;
-  width: 100px;
+  width: minmax(100px, 50%);
   background-color: #a37871ff;
   border: none;
   height: 34px;
   border-radius: 34px;
   justify-self: center;
   color: white;
+  font-size: 15px;
+  margin: 2% 0%;
 }
 
 #shelf slider {
