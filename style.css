@@ -35,6 +35,12 @@ main {
 header {
   grid-area: header;
   font-size: calc(1em+0.3vw);
+  transition: 
+  letter-spacing 1s;
+}
+
+header:hover {
+  letter-spacing: 0.5rem;
 }
 
 header,
@@ -57,7 +63,7 @@ select,
 button {
   border: 2px solid black;
   border-radius: 5px;
-  font-size: large;
+  font-size: 15px;
   width: 90%;
   box-shadow: 2px 2px 4px var(--charcoal);
 }
@@ -84,7 +90,17 @@ button {
   box-shadow: 2px 2px 4px var(--charcoal);
   display: flex;
   flex-direction: column;
+  transition: border 500ms;
+  font-size: 18px;
 }
+
+#shelf > div:hover {
+  border-left: 15px solid var(--charcoal);
+}
+
+#shelf > div:hover button {
+  background-color: var(--charcoal);
+} 
 
 #shelf button {
   background-color: var(--cinereous);
@@ -97,6 +113,7 @@ button {
   color: white;
   font-size: 15px;
   margin: 2% 0%;
+  transition: background-color 500ms;
 }
 
 footer {
